@@ -1,159 +1,154 @@
-# PUNTO DE VENTA JAVA
+# 🧾 PUNTO DE VENTA JAVA
 
+## Sistema de Punto de Venta
 
-~# Sistema de Punto de Venta
+Aplicación web para la gestión de productos y ventas, desarrollada con Spring Boot y PostgreSQL.
 
-```Este
+---
 
-~~---
+## ✨ Características del Proyecto
 
-~~## **Características del Proyecto**
+- Gestión de productos y ventas.
+- Interfaz de usuario moderna utilizando HTML, CSS y JavaScript.
+- Backend robusto con Spring Boot.
+- Persistencia de datos mediante PostgreSQL.
+- Arquitectura escalable y modular.
 
-~~~* Gestión de productos y ventas.
-* Interfaz de usuario moderna utilizando HTML, CSS y JavaScript.
-* Backend robusto con Spring Boot.
-* Persistencia de datos mediante una base de datos MySQL.
-* Arquitectura escalable y modular.
+---
 
-~---
+## 🧩 Requisitos Previos
 
-~~## **Requisitos Previos**
+1. **Java Development Kit (JDK):** Versión 17 o superior.
+2. **Maven:** Para la gestión de dependencias.
+3. **PostgreSQL:** Para la base de datos.
+4. **IDE:** IntelliJ IDEA, Eclipse, VS Code u otro editor.
+5. **Git:** Para el control de versiones.
 
-~~~1. **Java Development Kit (JDK):** Versión 17 o superior.
-1. **Maven:** Para la gestión de dependencias.
-1. **MySQL:** Para la base de datos.
-1. **IDE:** IntelliJ IDEA, Eclipse u otro editor de tu preferencia.
-1. **Git:** Para el control de versiones.
+---
 
-~---
+## ⚙️ Configuración del Entorno
 
-~~## **Configuración del Entorno**
+### 1️⃣ Clonar el repositorio
 
-~~~~### **1. Clonar el Repositorio**
-
-~~~ ~Tu amigo (o cualquier colaborador) debe clonar este repositorio para comenzar:
-
-~ ~
-```
-
+```bash
 git clone https://github.com/JEHL22/punto-venta-java.git
 cd punto-venta-java
-
 ```
 
-~~### **2. Configurar las Ramas**
+### 2️⃣ Configurar las ramas
 
-~~~ ~Este proyecto utiliza dos ramas principales:
+* `main`: Rama estable.
+* `dev`: Rama de desarrollo.
 
-~ * `main`: Rama principal, estable y lista para producción.
-* `dev`: Rama de desarrollo donde se realizan los cambios.
+#### Flujo de trabajo
 
-~#### **Flujo de Trabajo para las Ramas**
+Antes de trabajar:
 
-~~~* Antes de trabajar:
-  ```shell notranslate position-relative overflow-auto
-  git checkout dev
-  git pull origin dev
-```
+<pre class="overflow-visible! px-0!" data-start="1299" data-end="1347"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git checkout dev
+git pull origin dev
+</span></span></code></div></div></pre>
 
-* Después de realizar cambios:
-  ```shell
-  git add .
-  git commit -m "Descripción del cambio"
-  git push origin dev
-  ```
-* Fusionar `dev` en `main` (solo para responsables):
-  ```shell
-  git checkout main
-  git pull origin main
-  git merge dev
-  git push origin main
-  ```
+Después de los cambios:
 
-~### **3. Configurar la Base de Datos**
+<pre class="overflow-visible! px-0!" data-start="1374" data-end="1454"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git add .
+git commit -m </span><span>"Descripción del cambio"</span><span>
+git push origin dev
+</span></span></code></div></div></pre>
 
-```1.
-   ```sql notranslate position-relative overflow-auto
-   CREATE DATABASE punto_venta;
-   ```
-1. Configurar las credenciales de la base de datos en el archivo `application.properties`:
-   ```ini notranslate position-relative overflow-auto
-   spring.datasource.url=jdbc:mysql://localhost:3306/punto_venta
-   spring.datasource.username=TU_USUARIO
-   spring.datasource.password=TU_CONTRASEÑA
-   ```
+Fusionar `dev` en `main` (solo responsables):
 
-~### **4. Ejecutar la Aplicación**
+<pre class="overflow-visible! px-0!" data-start="1503" data-end="1588"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git checkout main
+git pull origin main
+git merge dev
+git push origin main
+</span></span></code></div></div></pre>
 
-~~~1. Compilar y ejecutar el proyecto con Maven:
-   ```shell notranslate position-relative overflow-auto
-   mvn spring-boot:run
-   ```
-1. Accede a la aplicación en tu navegador en `http://localhost:8080`.
+---
 
-~---
+### 3️⃣ Configurar la Base de Datos
 
-~~## **Estructura del Proyecto**
+Crear la base de datos:
 
-~~~* **Backend:**
-  * Controladores: Gestión de las solicitudes HTTP.
-  * Servicios: Lógica de negocio.
-  * Repositorios: Interacción con la base de datos.
-  * Entidades: Modelos de datos.
-* **Frontend:**
-  * HTML y CSS: Diseño de la interfaz.
-  * JavaScript: Interactividad.
-* **Base de Datos:**
-  * Tablas para productos, ventas y usuarios.
+<pre class="overflow-visible! px-0!" data-start="1657" data-end="1696"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-sql"><span><span>CREATE</span><span> DATABASE punto_venta;
+</span></span></code></div></div></pre>
 
-~---
+Configurar `application.properties`:
 
-~~## **Contribuir al Proyecto**
+<pre class="overflow-visible! px-0!" data-start="1736" data-end="2031"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-properties"><span>spring.datasource.url=jdbc:postgresql://localhost:5432/punto_venta
+spring.datasource.username=TU_USUARIO
+spring.datasource.password=TU_CONTRASEÑA
 
-~~~~### **1. Crear una Nueva Rama para Cambios**
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+</span></code></div></div></pre>
 
-~~~ ~Si deseas trabajar en una nueva funcionalidad o corrección de errores:
+---
 
-~ ~
-```
-git checkout -b tunombre-dev
-```
+### 4️⃣ Ejecutar la aplicación
 
-~~### **2. Realizar un Pull Request**
+<pre class="overflow-visible! px-0!" data-start="2070" data-end="2101"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>mvn spring-boot:run
+</span></span></code></div></div></pre>
 
-~~~1. Haz cambios en tu rama y súbelos:
-   ```shell notranslate position-relative overflow-auto
-   git push origin tunombre-dev
-   ```
-1. Crea un Pull Request en GitHub para que el equipo revise los cambios.
+Abrir en el navegador:
 
-~---
+👉 [http://localhost:8080](http://localhost:8080)
 
-~~## **Colaboradores**
+---
 
-~~~* [Julio Huaman](https://github.com/JEHL22)
-* **[Colaborador 1]**
-* **[Colaborador 2]**
+## 🗂️ Estructura del Proyecto
 
-~---
+### Backend
 
-~~## **Notas Importantes**
+* Controladores: Gestión de solicitudes HTTP.
+* Servicios: Lógica de negocio.
+* Repositorios: Acceso a datos (JPA).
+* Entidades: Modelos de datos.
 
-~~~1. Siempre actualiza tu rama local antes de empezar a trabajar:
-   ```shell notranslate position-relative overflow-auto
-   git pull origin dev
-   ```
-1. Comunícate con el equipo para evitar conflictos en los archivos.
-1. Antes de fusionar cambios en `main`, verifica que todo funcione correctamente.
+### Frontend
 
-~---
+* HTML y CSS: Interfaz.
+* JavaScript: Interactividad.
 
-~ ~Si tienes preguntas o necesitas ayuda, no dudes en contactarme.
+### Base de Datos
 
-~ ~¡Gracias por contribuir al proyecto! 🎉
+* Tablas para productos, ventas y usuarios.
 
-~
-```
+---
 
+## 🤝 Contribuir al Proyecto
 
-```
+### 1️⃣ Crear una nueva rama
+
+<pre class="overflow-visible! px-0!" data-start="2549" data-end="2589"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git checkout -b tunombre-dev
+</span></span></code></div></div></pre>
+
+### 2️⃣ Subir cambios
+
+<pre class="overflow-visible! px-0!" data-start="2614" data-end="2654"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git push origin tunombre-dev
+</span></span></code></div></div></pre>
+
+Luego crear un Pull Request en GitHub.
+
+---
+
+## 👥 Colaboradores
+
+* [Julio Huaman](https://github.com/JEHL22)
+* Colaborador 1
+* Colaborador 2
+
+---
+
+## ⚠️ Notas Importantes
+
+* Actualiza siempre tu rama antes de trabajar:
+
+<pre class="overflow-visible! px-0!" data-start="2877" data-end="2908"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>git pull origin dev
+</span></span></code></div></div></pre>
+
+* Verifica que la app compile y corra antes de hacer merge a `main`.
+
+---
+
+Si tienes preguntas o sugerencias, ¡bienvenido al equipo! 🚀
