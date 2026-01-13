@@ -4,6 +4,8 @@
 
 Aplicación robusta para la gestión de productos y ventas, diseñada bajo los principios de **Arquitectura Hexagonal (Ports & Adapters)** para garantizar escalabilidad, mantenibilidad y desacoplamiento tecnológico.
 
+Un cambio a la vez
+
 ---
 
 ## ✨ Características del Proyecto
