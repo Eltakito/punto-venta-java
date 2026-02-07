@@ -1,21 +1,24 @@
 package com.puntodeventa.infrastructure.adapter.input.rest;
 
 import com.puntodeventa.application.ports.input.CreateProductUseCase;
+import com.puntodeventa.application.usecase.ProductService;
 import com.puntodeventa.domain.model.Product;
-import com.puntodeventa.infrastructure.adapter.input.rest.dto.ProductRequest; // Nuevo
-import com.puntodeventa.infrastructure.adapter.input.rest.dto.ProductResponse; // Nuevo
+import com.puntodeventa.infrastructure.adapter.input.rest.dto.ProductRequest;
+import com.puntodeventa.infrastructure.adapter.input.rest.dto.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
+//Genera constuctor automatico con los campos finales (final) de la clase
 public class ProductController {
 
     private final CreateProductUseCase createProductUseCase;
+    private final ProductService productService;
 
     @PostMapping
     public ProductResponse create(@RequestBody ProductRequest request) {
@@ -31,7 +34,10 @@ public class ProductController {
 
     @GetMapping
     public List<ProductResponse> list() {
-        // Por ahora devolvemos una lista vacía para que GET /api/products no devuelva 405
-        return Collections.emptyList();
+        // Obtener todos los productos del servicio y convertir a DTO
+        return productService.listAll()
+                .stream()
+                .map(product -> new ProductResponse(product.getId(), product.getName(), product.getPrice(), product.getStock()))
+                .collect(Collectors.toList());
     }
 }
